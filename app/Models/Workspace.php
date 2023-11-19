@@ -15,13 +15,18 @@ class Workspace extends Model
         'name',
     ];
 
-
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
     public function tasks(){
 
         return $this->hasMany(Task::class,'workspace');
     }
 
-
+    /**
+     * @param Builder $query
+     * @return void
+     */
       public function scopeWorkspaces(Builder $query){
 
         $query->where('user_id',auth()->user()->id);

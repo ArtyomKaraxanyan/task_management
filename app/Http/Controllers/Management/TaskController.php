@@ -129,4 +129,21 @@ class TaskController extends Controller
         return redirect()->back()->withSuccess('Deleted');
 
     }
+
+    /**
+     * @param Request $request
+     * @return void
+     */
+    public function taskSort(Request $request)
+    {
+        if ($request->to!=5){
+           $taskFinish = null;
+            $this->task->find($request->item)->update(['status'=>$request->to,'task_finish_duration'=>$taskFinish]);
+
+       }else{
+            $this->task->find($request->item)->update(['status'=>$request->to]);
+
+        }
+
+    }
 }

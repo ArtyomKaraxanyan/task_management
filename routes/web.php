@@ -28,11 +28,13 @@ Route::group(['middleware' => 'auth'], function () {
     Route::controller(TaskController::class)->group(function () {
         Route::get('/task/finish/show/{task}', 'taskFinishShow')->name('tasks.finish.show');
         Route::post('/task/finish/{task}', 'taskFinish')->name('tasks.finish');
+        Route::post('/task/sort', 'taskSort')->name('tasks.sort');
     });
 
     Route::controller(WorkspaceController::class)->group(function () {
         Route::put('/workspace/access/{workspace}', 'access')->name('workspaces.access');
         Route::delete('/workspace/access/destroy/{access}', 'accessDestroy')->name('workspaces.destroy_access');
+        Route::get('/workspace/border/{workspace}', 'border')->name('workspaces.border');
     });
 
 foreach (\App\Enums\RoutingEnum::routeing() as $key => $value){

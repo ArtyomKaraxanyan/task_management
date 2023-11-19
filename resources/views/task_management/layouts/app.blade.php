@@ -31,6 +31,7 @@
     <script src="{{asset('js/jquery.main.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <script src="https://raw.githack.com/SortableJS/Sortable/master/Sortable.js"></script>
 
     <!-- Template Main CSS File -->
     <link href="{{asset('css/style.css')}}" rel="stylesheet">

@@ -133,4 +133,10 @@ class WorkspaceController extends Controller
        return redirect('/');
 
     }
+    public function border(Workspace $workspace)
+    {
+        $tasks = $workspace->tasks()->get();
+        return view('task_management.workspace.index_border',['workspace'=>$workspace,'tasks'=>$tasks]);
+
+    }
 }

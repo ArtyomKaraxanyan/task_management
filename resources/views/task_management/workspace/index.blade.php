@@ -1,7 +1,10 @@
 @extends('task_management.layouts.app')
 @section('content')
     <div class="pagetitle">
-        <h1>Workspace</h1>
+        <div>
+        <h1 style="text-align: left">Workspace</h1>
+            <a href="{{route('workspaces.border',$workspace->id)}}"><h5 style="text-align:right">Border</h5></a>
+        </div>
         <nav>
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="{{'/'}}">Home</a></li>

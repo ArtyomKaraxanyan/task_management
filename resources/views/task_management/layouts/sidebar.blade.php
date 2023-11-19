@@ -1,3 +1,5 @@
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 <aside id="sidebar" class="sidebar">
 
     <ul class="sidebar-nav" id="sidebar-nav">
@@ -12,8 +14,10 @@
         <a href="{{ route('workspaces.store') }}" class="btn btn-sm btn-outline-success text-capitalize create_workspace" data-user_id="{{Auth::id()}}">
             + Create Workspace
         </a>
-    @forelse(\App\Enums\WorkspaceEnum::workspaces() as $workspace)
+        </ul>
 
+    <ul id="sortable" class="sidebar-nav" >
+    @forelse(\App\Enums\WorkspaceEnum::workspaces() as $workspace)
         <li class="nav-item">
             <div class="justify-content-between d-flex sidebar-drop">
             <a class="nav-link " href="{{route('workspaces.show',$workspace->id)}}">
@@ -24,12 +28,14 @@
                 <i class="bi bi-three-dots ms-auto action_workspace"></i>
             </a>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li>  <a href="{{ route('workspaces.update', $workspace->id) }}"
+                <li>
+                    <a href="{{ route('workspaces.update', $workspace->id) }}"
                          title="{{ __('Edit') }}"
                          type="button"
                          class="btn btn-sm btn-outline-primary action-workspace-edit" data-name="{{ $workspace->name}}">
-                        Edit  <i class="bi bi-pencil-square"></i>
-                    </a></li>
+                         Edit  <i class="bi bi-pencil-square"></i>
+                    </a>
+                </li>
                 <li>
                     <form method="post" action="" class="d-inline-block delete_item">
                         @method('DELETE')
@@ -92,3 +98,10 @@
     @endif
 
 </aside>
+
+<script>
+    $( function() {
+        $( "#sortable" ).sortable();
+    } );
+</script>
+

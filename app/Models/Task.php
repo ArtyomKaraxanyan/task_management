@@ -28,15 +28,27 @@ class Task extends Model
 
         return $this->belongsTo(Workspace::class,'workspace')->first();
     }
+
+    /**
+     * @return Model|\Illuminate\Database\Eloquent\Relations\BelongsTo|object|null
+     */
     public function taskStatus(){
 
        return $this->belongsTo(Status::class,'status')->first();
     }
 
+    /**
+     * @return Model|\Illuminate\Database\Eloquent\Relations\BelongsTo|object|null
+     */
+
     public function taskPriority(){
 
        return $this->belongsTo(Priority::class,'priority')->first();
     }
+
+    /**
+     * @return Model|\Illuminate\Database\Eloquent\Relations\BelongsTo|object|null
+     */
     public function user(){
 
        return $this->belongsTo(User::class,'user_id')->first();

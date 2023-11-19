@@ -226,8 +226,22 @@ h6 {
   background-position: center center; /* Background position */
   cursor: pointer; /* Cursor type */
 }
+.row-tasks{
+    flex-wrap:nowrap!important;
+}
+.card-border{
+    border: 1px solid #eaedf1!important;
+    height: auto;
 
-
+}
+.task-border-li{
+    border: 1px solid #eaedf1!important;
+     width: auto;
+    height: auto;
+}
+task-border-ul{
+    padding: 10px;
+}
 thead tr th  {
   color: wheat;
   border: 0;
