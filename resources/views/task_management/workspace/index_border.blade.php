@@ -42,7 +42,7 @@
                                                <ul id="{{str_replace(' ', '', $status->name)}}" data-id="{{$status->id}}" class="task-border-ul">
                                                @foreach($status->tasksQuery($workspace->id) as $task)
                                                        <li class="task-border-li" data-id="{{$task->id}}">
-                                                       <div class="card-body">
+                                                       <div class="card-body border-task-body" >
                                                            <div>
                                                        <p>{{$task->name }}
                                                        </p>

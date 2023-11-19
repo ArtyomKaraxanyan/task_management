@@ -229,6 +229,12 @@ h6 {
 .row-tasks{
     flex-wrap:nowrap!important;
 }
+::marker {
+    color: transparent;
+}
+.border-task-body{
+    background-color: darkslategrey
+}
 .card-border{
     border: 1px solid #eaedf1!important;
     height: auto;
